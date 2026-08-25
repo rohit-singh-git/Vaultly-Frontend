@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vaultly</title>
+    <script>
+      const repo = "/Vaultly-Frontend";
+      const path = window.location.pathname;
+
+      if (path.startsWith(repo)) {
+        const route = path.slice(repo.length);
+        const query = window.location.search;
+        const hash = window.location.hash;
+
+        window.location.replace(
+          repo + "/?redirect=" +
+          encodeURIComponent(route + query + hash)
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
